@@ -1,29 +1,62 @@
 ---
+const titulopagina = "About me";
+
+const identidade = {
+    nome: 'Everton',
+    pais: 'Brasil',
+    ocupacao: 'Coder e Suporte TI',
+    hobbies: ["Marceneiro", "Webdesigner", "Basketball"]
+}
+const habilidades = ["HTML", "CSS", "JavaScript", "Astro", "Wordpress", "Escrita", "Oratória", "Negociação"]
+
+const feliz = true;
+const terminado = false;
+const meta = 3;
+
 
 ---
 
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{titulopagina}</title>
   </head>
   <body>
     <a href="/">Inicio</a>
-    <a href="/sobre">Sobre</a>
+    <a href="/sobre">Sobre Mim</a>
     <br />
     <a href="/blog">Blog</a>
-    <h1>Meu Site Astro</h1>
+    <h1>Sobre mim</h1>
+    <h1>{titulopagina}</h1>
     <h2>......e meu Novo Site Astro</h2>
     <p>
-      Estou criando esse tutorial introdutório do Astra. Esta é a segunda página
-      do Tutorial, e é a primeira que eu construí
+      Aqui estão alguns fatos sobre mim:
     </p>
+    <ul>
+        <li>
+            Meu nome é {identidade.nome}.
+        </li>
+        <li>
+            Eu moro no {identidade.pais} e eu trabalho com {identidade.ocupacao}.
+        </li>
+        <li>
+            Dois de meus hobbies são: {identidade.hobbies[1]} e {identidade.hobbies[2]}
+        </li>
+    </ul>
     <p>
-      Este site será atualizado enquanto eu completo mais desse tutorial, então
-      continue verificando e veja como minha jornada está indo!
+      Minhas habilidades são:
     </p>
+    <ul>
+        {habilidades.map((habilidade) => <li>{habilidade}</li>)}
+    </ul>
+
+    {feliz && <p>Estou feliz em estar aprendendo Astro!</p>}
+
+    {terminado && <p>Eu terminei este tutorial</p>}
+
+    {meta === 3 ? <p>Minha meta é terminar em 3 dias.</p> :  <p>Minha meta não é terminar em 3 dias.</p>}
   </body>
 </html>
