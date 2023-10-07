@@ -1,4 +1,5 @@
 ---
+
 titule: 'Minha Primeira Postagem no Blog'
 datapub: 2023-10-03
 descricao: 'Esta é uma página de Primeira Postagem no Astro'
@@ -7,6 +8,7 @@ imagem:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'A logo completa do Astro.'
 tags: ["astro", "blogueirando", "aprendendo em público"]
+
 ---
 ## MInha Primeira Postagem no Blog
 

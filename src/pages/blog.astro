@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css"
 let titulopagina = "Blog Baseado em Astro";
 ---
 
@@ -11,9 +12,11 @@ let titulopagina = "Blog Baseado em Astro";
     <title>Astro</title>
   </head>
   <body>
+    <div class="cabecalho">
   <a href="/">Início</a>
   <a href="/sobre/">Sobre</a>
   <a href="/blog/">Blog</a>
+  </div>
 
   <h1>{titulopagina}</h1>
   <h1>Meu Blog de Aprendizado sobre Astro</h1>

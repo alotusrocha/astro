@@ -1,18 +1,31 @@
 ---
-const titulopagina = "About me";
+import "../styles/global.css";
+const titulopagina = "Sobre mim";
 
 const identidade = {
-    nome: 'Everton',
-    pais: 'Brasil',
-    ocupacao: 'Coder e Suporte TI',
-    hobbies: ["Marceneiro", "Webdesigner", "Basketball"]
-}
-const habilidades = ["HTML", "CSS", "JavaScript", "Astro", "Wordpress", "Escrita", "Oratória", "Negociação"]
+  nome: "Everton",
+  pais: "Brasil",
+  ocupacao: "Coder e Suporte TI",
+  hobbies: ["Marceneiro", "Webdesigner", "Basketball"],
+};
+const habilidades = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Astro",
+  "Wordpress",
+  "Escrita",
+  "Oratória",
+  "Negociação",
+];
 
 const feliz = true;
 const terminado = false;
 const meta = 3;
 
+const corHabilidade = "navy";
+const espessuraFonte = "bold";
+const capitalizaTexto = "uppercase";
 
 ---
 
@@ -23,40 +36,56 @@ const meta = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{titulopagina}</title>
+    <style define:vars={{corHabilidade, espessuraFonte, capitalizaTexto}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .habilidade {
+        color: var(--corHabilidade);
+        font-weight: var(--espessuraFonte);
+        text-transform: var(--capitalizaTexto);
+
+      }
+    </style>
   </head>
   <body>
+    <div class="cabecalho">
     <a href="/">Inicio</a>
-    <a href="/sobre">Sobre Mim</a>
-    <br />
+    <a href="/sobre">Sobre</a>
     <a href="/blog">Blog</a>
-    <h1>Sobre mim</h1>
+    </div>
     <h1>{titulopagina}</h1>
     <h2>......e meu Novo Site Astro</h2>
-    <p>
-      Aqui estão alguns fatos sobre mim:
-    </p>
+    <p>Aqui estão alguns fatos sobre mim:</p>
     <ul>
-        <li>
-            Meu nome é {identidade.nome}.
-        </li>
-        <li>
-            Eu moro no {identidade.pais} e eu trabalho com {identidade.ocupacao}.
-        </li>
-        <li>
-            Dois de meus hobbies são: {identidade.hobbies[1]} e {identidade.hobbies[2]}
-        </li>
+      <li>
+        Meu nome é {identidade.nome}.
+      </li>
+      <li>
+        Eu moro no {identidade.pais} e eu trabalho com {identidade.ocupacao}.
+      </li>
+      <li>
+        Dois de meus hobbies são: {identidade.hobbies[1]} e {
+          identidade.hobbies[2]
+        }
+      </li>
     </ul>
-    <p>
-      Minhas habilidades são:
-    </p>
+    <p>Minhas habilidades são:</p>
     <ul>
-        {habilidades.map((habilidade) => <li>{habilidade}</li>)}
+      {habilidades.map((habilidade) => <li class="habilidade">{habilidade}</li>)}
     </ul>
 
     {feliz && <p>Estou feliz em estar aprendendo Astro!</p>}
 
     {terminado && <p>Eu terminei este tutorial</p>}
 
-    {meta === 3 ? <p>Minha meta é terminar em 3 dias.</p> :  <p>Minha meta não é terminar em 3 dias.</p>}
+    {
+      meta === 3 ? (
+        <p>Minha meta é terminar em 3 dias.</p>
+      ) : (
+        <p>Minha meta não é terminar em 3 dias.</p>
+      )
+    }
   </body>
 </html>
