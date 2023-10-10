@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import Navegacao from '../components/Navegacao.astro';
+import Rodape from '../components/Rodape.astro';
+import Cabecalho from '../components/Cabecalho.astro';
 const titulopagina = "Sobre mim";
 
 const identidade = {
@@ -35,7 +38,7 @@ const capitalizaTexto = "uppercase";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{titulopagina}</title>
+    
     <style define:vars={{corHabilidade, espessuraFonte, capitalizaTexto}}>
       h1 {
         color: purple;
@@ -50,10 +53,13 @@ const capitalizaTexto = "uppercase";
     </style>
   </head>
   <body>
+    <header>
+      <nav>
+        <Cabecalho />
+      </nav>
+    </header>
     <div class="cabecalho">
-    <a href="/">Inicio</a>
-    <a href="/sobre">Sobre</a>
-    <a href="/blog">Blog</a>
+    <Navegacao />
     </div>
     <h1>{titulopagina}</h1>
     <h2>......e meu Novo Site Astro</h2>
@@ -87,5 +93,10 @@ const capitalizaTexto = "uppercase";
         <p>Minha meta não é terminar em 3 dias.</p>
       )
     }
+
+    <Rodape />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>

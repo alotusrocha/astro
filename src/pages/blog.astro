@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css"
+import Rodape from '../components/Rodape.astro';
+import Cabecalho from '../components/Cabecalho.astro'
 let titulopagina = "Blog Baseado em Astro";
 ---
 
@@ -12,7 +14,14 @@ let titulopagina = "Blog Baseado em Astro";
     <title>Astro</title>
   </head>
   <body>
-    <div class="cabecalho">
+<!--     
+    <div class="cabecalho"> -->
+
+  <header>
+    <nav>
+      <Cabecalho />
+    </nav>
+  </header>
   <a href="/">Início</a>
   <a href="/sobre/">Sobre</a>
   <a href="/blog/">Blog</a>
@@ -26,5 +35,9 @@ let titulopagina = "Blog Baseado em Astro";
     <li><a href="/postagens/post-2/">Postagem 2</a></li>
     <li><a href="/postagens/post-3/">Postagem 3</a></li>
   </ul>
+  <Rodape />
+  <script>
+    import "../scripts/menu.js";
+  </script>
 </body>
 </html>

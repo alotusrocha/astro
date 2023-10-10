@@ -1,26 +1,12 @@
 ---
-import "../styles/global.css";
-const titulopagina="Página Tutorial Astro";
-
+import LayoutBase from '../layouts/LayoutBase.astro';
+const tituloPagina = "Home";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="cabecalho">
-		<a href="/">Inicio</a>
-    	<a href="/sobre">Sobre</a>
-		<a href="/blog">Blog</a>
-		</div>
-		<br>
-		<h1>Astro</h1>
-		<h2>{titulopagina}</h2>
-		
-	</body>
-</html>
+<LayoutBase>
+	<h2>O Subtítulo Incrível do Meu Blog</h2>
+</LayoutBase>
+
+
+
+
